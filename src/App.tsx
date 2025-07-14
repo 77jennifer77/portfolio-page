@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-black text-white">
         <Routes>
           {pageRoutes.map((route: PageRoute) => (
             <Route key={route.name} path={route.path} element={route.element} />
