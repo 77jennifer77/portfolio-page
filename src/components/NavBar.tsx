@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import pageRoutes from '../routes/pageRoutes.tsx';
 import type { PageRoute } from '../routes/pageRoutes.tsx';
+import {data} from '../assets/data.ts';
 
 // Filter out NotFound and any routes you don't want in the nav
 const navLinks: PageRoute[] = pageRoutes.filter(
@@ -18,7 +19,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo / Brand */}
           <Link to="/" className="text-xl font-bold text-blue-600">
-            Jennifer Chiang's Portfolio
+            {data.name}'s Portfolio
           </Link>
 
           {/* Desktop Nav */}
