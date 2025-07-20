@@ -5,7 +5,7 @@ Built with vite + tailwindcss
 Deployed with vercel [Check out my portfolio](https://portfolio-page-29mx2buuh-jennifers-projects-dceef53d.vercel.app/)
 
 ## Project Goal
-Create a personal portfolio that combines the features I enjoyed from two different portfolio templates. Build the templates with minimal dependencies for ease of maintenance.<br>
+Create a personal portfolio that combines the features I enjoyed from two different portfolio templates. Build the templates with minimal dependencies for ease of maintenance, and with my personal touch sprinkled in.<br>
 [Portfolio Template 1](https://www.devportfoliotemplates.com/portfolio-templates/modern-minimal)<br>
 [Portfolio Template 2](https://beautiful-react-tailwind-portfolio.vercel.app/)
 
