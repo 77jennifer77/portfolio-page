@@ -1,5 +1,15 @@
-# React + TypeScript + Vite
+# Jennifer Chiang's Portfolio Page 
+*This repository being worked on currently*
+<br>
+Built with vite + tailwindcss
+Deployed with vercel [Check out my portfolio](https://portfolio-page-29mx2buuh-jennifers-projects-dceef53d.vercel.app/)
 
+## Project Goal
+Create a personal portfolio that combines the features I enjoyed from two different portfolio templates. Build the templates with minimal dependencies for ease of maintenance.<br>
+[Portfolio Template 1](https://www.devportfoliotemplates.com/portfolio-templates/modern-minimal)<br>
+[Portfolio Template 2](https://beautiful-react-tailwind-portfolio.vercel.app/)
+
+# Default vite+react template readme
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
