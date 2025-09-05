@@ -6,6 +6,7 @@ export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleTheme = () => {
+        /* Flip value of isDarkMode */
         setIsDarkMode(!isDarkMode);
     }   
     return (
