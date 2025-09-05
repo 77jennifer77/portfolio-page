@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @theme{
+  /* Color and animation variables */
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -21,6 +22,8 @@
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
 
+
+/* Keyframe animations */
 @keyframes float {
     0%,
     100% {
@@ -66,6 +69,7 @@
 
 @layer base {
   :root {
+    /* Light theme variables */
     --background: 
     --foreground:
     
@@ -77,16 +81,31 @@
 
   }
   .dark {
-    --background: 
-    --foreground:
+    /* Dark theme variables */
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
     
-    --primary:
-    --primary-foreground:
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
     
-    --card:
-    --border:
+    --card: 222 47% 8%;
+    --border: 217 33% 20%;
 
   }
+
+  * {
+    @apply border-border;
+  };
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
 }
 
 :root {
@@ -162,4 +181,42 @@ button:focus-visible {
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
+}
+
+@utility text-glow {
+  @apply relative;
+  text
+  -shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+/* make card text bigger on hover */
+@utility card-hover {
+  @apply transition-transform duration-300:scale-[1.02] hover:shadow-lg;
+}
+
+@utility gradient-border {
+  @apply relative rounded-md;
+  background: linear-gradient(to, right, hsl(var(--card), hsl(var(--card))));
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)] hover:scale-105 active:scale-95;
+}
+
+@utility star {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+}
+
+@utility meteor {
+  @apply absolute bg-linear-to-r from-white via-white to-transparant rounded-full;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
