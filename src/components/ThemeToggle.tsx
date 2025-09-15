@@ -6,8 +6,16 @@ export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleTheme = () => {
-        /* Flip value of isDarkMode */
-        setIsDarkMode(!isDarkMode);
+        if (isDarkMode) {
+            setIsDarkMode(false);
+            localStorage.setItem('theme', 'light');
+            document.documentElement.classList.remove('dark');
+        } else {
+            /* Flip value of isDarkMode */
+            setIsDarkMode(true);
+            localStorage.setItem('theme', 'dark');
+            document.documentElement.classList.add('dark');
+        }
     }   
     return (
         <button onClick={toggleTheme}>{isDarkMode ? <Sun className="h-6 w-6 text-yellow-300" /> : <Moon className="h-6 w-6 text-blue-900"/>}</button>
