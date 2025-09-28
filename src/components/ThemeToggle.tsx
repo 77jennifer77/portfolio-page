@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 /* Theme Toggling component to control light and dark mode */
 export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-
+    useEffect(() => {
+        /* Check local storage for theme preference */
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark') {
+            setIsDarkMode(true);
+            document.documentElement.classList.add('dark');
+        } else {
+            setIsDarkMode(false);
+            document.documentElement.classList.remove('dark');
+        }
+    }, []);
 
     const toggleTheme = () => {
         if (isDarkMode) {
