@@ -1,0 +1,1 @@
+export StarBackground from './StarBackground';

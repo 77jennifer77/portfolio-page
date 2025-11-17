@@ -6,7 +6,7 @@ export default function Home() {
         {/* Theme Toggle*/}
         <ThemeToggle />
         {/* Background Effects */}
-    
+        {/* <StarBackground /> */}
         {/* NavBar */}
     
         {/* Main Content */}
