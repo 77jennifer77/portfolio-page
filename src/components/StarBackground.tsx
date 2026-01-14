@@ -7,16 +7,22 @@ export const StarBackground = () => {
     useEffect(() => {
         generateStars();    
         generateMeteors();
+
+        const handleResize = () => {
+            generateStars();
+            generateMeteors();
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        // cleanup listener on unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
     }, []);
 
     const generateStars = () => {
-        const numberOfStars = 1000;
-        /* calulation for number of stars based on screen size was broken
-            calculatio always returned 0
-        */
-        // Math.floor(
-        //     (window.innerWidth + window.innerHeight) / 10000
-        // );
+        const numberOfStars = Math.floor((window.innerWidth * window.innerHeight) / 5000);
         const newStars = [];
         for (let i = 0; i < numberOfStars; i++) {
             newStars.push({
@@ -33,12 +39,7 @@ export const StarBackground = () => {
 
     const generateMeteors = () => {
         const numberOfMeteors = 5;
-        /* calulation for number of stars based on screen size was broken
-            calculatio always returned 0
-        */
-        // Math.floor(
-        //     (window.innerWidth + window.innerHeight) / 10000
-        // );
+
         const newMeteors = [];
         for (let i = 0; i < numberOfMeteors; i++) {
             newMeteors.push({
@@ -75,8 +76,8 @@ export const StarBackground = () => {
                     key={meteor.id}
                     className="meteor animate-meteor"
                     style={{
-                        width: `${meteor.size}px`,
-                        height: `${meteor.size}px`,
+                        width: `${meteor.size * 50}px`, 
+                        height: `${meteor.size * 2}px`, 
                         left: `${meteor.x}%`,
                         top: `${meteor.y}%`,
                         delay: meteor.opacity,
